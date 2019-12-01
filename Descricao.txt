@@ -14,3 +14,21 @@ Driver JDBC do Mysql... Instale também o Xampp ou Wampserver e mantém ele liga
 para podermos usar nossa localhost.
 
 
+Camada de acesso Dados sigla dal
+Agora vamos criar um nova classe com nome ModuloConexao, abaixo do package br...
+vamos importar um conjunto de bibliotecas sql, depois de importado agora adicio
+nar um método dentro da classe um método static que necessita de retorno, agora
+adicionaremos novas váriaveis para ter acesso, depois de adicionando usaremos
+o método try catch para resolver possiveis bugs no futuro, como a classe não 
+tem um método main para podermos testar vamos chamar ela na classe TelaLogin
+com novas váriaveis adicionada, não esqueça de adicionar as bibliotecas sql e
+importar o pacote da classe ModuloConexao, agora fazeremos o teste de conexao
+execute o projeto se tudo correr bem aparecera algo do tipo:
+com.mysql.jdbc.JDBC4Connection@38aaaaa
+Isso quer dizer que conexâo foi estabelecida, faça um teste simulando um erro
+de não conexao com WampServer desligue ele e execute projeto observer ele mostra
+ra null, mais podemos deixar isso mais explicável um erro demonstrado no console
+para isso na classe ModuloConexao no método cath adicione um System.out.print(e)
+e simule um erro desligando o banco de dados observe que ele detalhara o erro.
+
+

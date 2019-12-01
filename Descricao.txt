@@ -7,3 +7,10 @@ o tamanho desejavel e adicione novas Labels Usuários e Senha, para usuário cam
 de texto, para senha campo de senha, adicione também botão e altere o texto para
 login e altere também o nome da variável para btnLogin, cofigure também para cen
 tralizar no centro e redimensionamento false e altere o title com nome desejado.
+
+No projeto em bibliotecas vamos adicionar o Drive mysql, com o botão direito na 
+biblioteca selecione Adicionar Biblioteca digite msql para procurar e adicione
+Driver JDBC do Mysql... Instale também o Xampp ou Wampserver e mantém ele ligado
+para podermos usar nossa localhost.
+
+

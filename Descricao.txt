@@ -1,2 +1,9 @@
 
-Iniciando projeto novos pacotes adicionado
+Iniciando projeto e novos pacotes adicionado
+
+TelaLogin adicionado
+Adicionando uma nova classe FormJFrame como nome de TelaLogin, configure e edite
+o tamanho desejavel e adicione novas Labels Usuários e Senha, para usuário campo 
+de texto, para senha campo de senha, adicione também botão e altere o texto para
+login e altere também o nome da variável para btnLogin, cofigure também para cen
+tralizar no centro e redimensionamento false e altere o title com nome desejado.

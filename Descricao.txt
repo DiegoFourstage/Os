@@ -39,4 +39,14 @@ usaremos a variável conexão, dizendo assim se conexão for diferente de null, 
 riável lblStatus altere pra conectado, caso contrario else lblStatus altere pra
 desconectado
 
+Agora em vez de uma mensagem por que se não uma imagem de icone, em questão de 
+design ficaria mais elegante, então vamos lá, em status com botão direito em 
+propriedades selecione a opção icon, importe para o projeto, imagens baixada da
+internet, dois icons, importe para pacotes icones, a palavra status pode ser 
+retirada também, segue link para icones free 
+https://www.iconfinder.com/search/?q=database&from=homepage&price=free
+no código fonte TelaLogin comente aonde seta as palavras e adicione novo código
+usando a mesma lógica, para fazer testes altere algum código da classe
+ModuloConexao para ver se icone de desconectado está aparecendo
+
 

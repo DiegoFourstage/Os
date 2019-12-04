@@ -31,4 +31,12 @@ ra null, mais podemos deixar isso mais explicável um erro demonstrado no consol
 para isso na classe ModuloConexao no método cath adicione um System.out.print(e)
 e simule um erro desligando o banco de dados observe que ele detalhara o erro.
 
+Vamos agora criar uma label aonde sera exibido a conexão do status se servidor
+esta conectado ou não conectado, na nova label altere ao nome de status e altere
+também o nome da variável, na lógica aonde está escrito status se servidor estti
+ver conectado a string sera altereda para conectado, se não o oposto, lógica
+usaremos a variável conexão, dizendo assim se conexão for diferente de null, va
+riável lblStatus altere pra conectado, caso contrario else lblStatus altere pra
+desconectado
+
 

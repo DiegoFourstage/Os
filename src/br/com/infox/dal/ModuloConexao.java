@@ -17,7 +17,7 @@ public class ModuloConexao {
         // Chamando o driver myql que foi importado na biblioteca
         String driver = "com.mysql.jdbc.Driver";
         // Armazenando informaçoes referente ao banco
-        String url = "jdbc:mysql://localhost:3306/dbinfox";
+        String url = "jdbc:mysql://localhost:3306/dbinfox2";
         String user="root";
         String password="";
         //Estabelecendo a conexão com o banco 

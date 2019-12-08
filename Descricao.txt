@@ -49,4 +49,23 @@ no código fonte TelaLogin comente aonde seta as palavras e adicione novo códig
 usando a mesma lógica, para fazer testes altere algum código da classe
 ModuloConexao para ver se icone de desconectado está aparecendo
 
+Agora criaremos um método logar na classe TelaLogin aonde sera vasculhado nome e
+senha do usuário se corresponder o que o usuário digitar ele será logado em uma
+outra tela, para organização dos nome de variáveis vamos alterar o nome da variável
+caixa de texto para txtUsuario, campo de senha txtSenha, observe o código comentado
+iremos preparar a consulta do banco de dados, depois iremos fazer a consulta do 
+usuário se senha existe, para isso usaremos uma função if e else, a função else 
+apenas dirá uma mensagem que usuario ou senha não confere, no pacote telas, vamos  
+criar um Form JFrame com nome TelaPrincipal e iremos instanciar dentro do método 
+logar aonde caso usuário e senha se confere diremos que janela sera verdadeira 
+visible, para que isso seja executado vamos conferir o botão ao clicar ele vai 
+conferir os dados digitado, em botão login click botão direito do  mouse em eventos 
+action e ActionPerformed que adicionara método de acesso ao apertar o botão, basta 
+apenas chamar no método logar dentro do método btnLoginActionPerformed, lembrando
+que deve se existir o arquivo sql dbinfox2 não comentei no inicio mais no próximo
+commit irei adicionar o arquivo sql, no arquivo mostra como se criar banco de dados
+como selecionar o banco de dados, criar tabela, adicionar dados a tabela, mostrar
+a tabela, mostrar usuarios e senhas
+
+
 

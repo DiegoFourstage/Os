@@ -67,5 +67,16 @@ commit irei adicionar o arquivo sql, no arquivo mostra como se criar banco de da
 como selecionar o banco de dados, criar tabela, adicionar dados a tabela, mostrar
 a tabela, mostrar usuarios e senhas
 
+Para uma boa prática ao acessar a próxima tela repare que tela de login se mantém 
+aberta, para pode fechar e depois de ter o acesso a tela principal adicione código 
+this.dipose(); e logo abaixo ..setVisible(true); e também para fechar a conexão 
+conexão.close(); agora em propriedade na classe TelaPrincipal vamos adicionar um 
+título, em menu swing adicionar Barra de menu, alterar seus nomes, agora adicionar 
+um submenu com um click botão direito do mouse em cima de umas das palavras do menu 
+principal ir em Adicionar da Paleta Item de Menu e alterar seus nomes, você pode 
+também a cada nome do submenu adicionar uma tecla de atalho, altere os nomes das 
+variáveis, adicione Painel da Area de Trabalho, uma label nome, usuário e uma outra 
+label importando uma imagem á ela mesma que será seu ícone
+
 
 

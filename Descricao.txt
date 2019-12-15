@@ -79,4 +79,12 @@ variáveis, adicione Painel da Area de Trabalho, uma label nome, usuário e uma 
 label importando uma imagem á ela mesma que será seu ícone
 
 
+Ao inicializar a TelaPrincipal adicionaremos a data daquele dia, na TelaPrincipal
+em qualquer lugar dela clique com o botão direito em Eventos>Windows>WindowActivade
+evento adicionado vamos editar o evento, instanciaremos uma variável Data importando
+a biblioteca util, depois diremos que lblData setara um texto que dentro do parametro 
+data convertera para uma String, execute observe que ele mostra um resultado com 
+todos detalhes da data, vamos formatar está data para apenas aparecer a data, para
+isso usaremos o método DateFormat
+
 

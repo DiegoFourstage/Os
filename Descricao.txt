@@ -87,4 +87,19 @@ data convertera para uma String, execute observe que ele mostra um resultado com
 todos detalhes da data, vamos formatar está data para apenas aparecer a data, para
 isso usaremos o método DateFormat
 
+Agora iremos editar a opção do submenu sair, em projeto clique em menu Opções e 
+clique em sair para selecionar com botão direito , em eventos, action, ActionPer
+formed, neste método adicionaremos uma variável inteira dizendo que ela é igual
+JOptionPane..., dentro de uma estrutura de decisão se sair for comparado a opcão
+JOptionPane.YES_NO_OPTION, diremos que essa estrutura será finalizada, código pra 
+finalizar System.exit(0)
 
+Editando o sobre, criaremos uma nova classe FormJFrame com nome TelaSobre dentro 
+do pacote telas colocaremos três labels altereando seus textos e uma label 
+adicionando um icone, importando para o pacote icones, importante colocar textos
+dizendo sua licença, versão e no nome do desenvolvedor, após selecionando o sub
+menu Opção com o botão direito em eventos>Action>ActionPermormed, evento adicionado
+instanciaremos a TelaSobre dizendo pra ela ser vísivel verdadeiro, ao testar observe
+que ao fechar no X ele fecha todo o programa, não queremos isso, por isso em propri
+edade da TelaSobre em defaultCloseOperation selecione a opção dispose e irá resolver,
+também configure as coisas básica centralizar a tela no meio e redimencionar false

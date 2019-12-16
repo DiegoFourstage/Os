@@ -91,6 +91,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem3.setText("Usuários");
+        jMenuItem3.setEnabled(false);
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -101,6 +102,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menCadUsu);
 
         menRelSer.setText("Relatátorio");
+        menRelSer.setEnabled(false);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setText("Serviço");
@@ -266,7 +268,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    public static javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JLabel lblData;
@@ -275,6 +277,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menAjuSob;
     private javax.swing.JMenu menCadUsu;
     private javax.swing.JMenu menOpcSai;
-    private javax.swing.JMenu menRelSer;
+    public static javax.swing.JMenu menRelSer;
     // End of variables declaration//GEN-END:variables
 }

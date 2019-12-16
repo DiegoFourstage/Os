@@ -103,3 +103,8 @@ instanciaremos a TelaSobre dizendo pra ela ser vísivel verdadeiro, ao testar ob
 que ao fechar no X ele fecha todo o programa, não queremos isso, por isso em propri
 edade da TelaSobre em defaultCloseOperation selecione a opção dispose e irá resolver,
 também configure as coisas básica centralizar a tela no meio e redimencionar false
+
+Iremos agora desabilitar o submenu Usuário e menu Relátorios para usuários comuns,
+apenas administradores poderão ter acesso á essa opção, selecione aonde deseja 
+desabilitar em propriedades>código>Modificadores de Variáveis e selecione public static
+e em Propriedades desetive enable, pronto apenas usuários Admin poderão ter acesso

@@ -36,12 +36,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblData = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        menCadUsu = new javax.swing.JMenu();
+        menCad = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        menRelSer = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menCadUsu = new javax.swing.JMenuItem();
+        menRel = new javax.swing.JMenu();
+        menRelSer = new javax.swing.JMenuItem();
         menAju = new javax.swing.JMenu();
         menAjuSob = new javax.swing.JMenuItem();
         menOpcSai = new javax.swing.JMenu();
@@ -74,7 +74,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/logo_02.png"))); // NOI18N
         jLabel3.setToolTipText("");
 
-        menCadUsu.setText("Cadastro");
+        menCad.setText("Cadastro");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem1.setText("Cliente");
@@ -83,37 +83,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        menCadUsu.add(jMenuItem1);
+        menCad.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem2.setText("OS");
-        menCadUsu.add(jMenuItem2);
+        menCad.add(jMenuItem2);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem3.setText("Usuários");
-        jMenuItem3.setEnabled(false);
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menCadUsu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        menCadUsu.setText("Usuários");
+        menCadUsu.setEnabled(false);
+        menCadUsu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menCadUsuActionPerformed(evt);
             }
         });
-        menCadUsu.add(jMenuItem3);
+        menCad.add(menCadUsu);
 
-        jMenuBar1.add(menCadUsu);
+        jMenuBar1.add(menCad);
 
-        menRelSer.setText("Relatátorio");
-        menRelSer.setEnabled(false);
+        menRel.setText("Relatátorio");
+        menRel.setEnabled(false);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem4.setText("Serviço");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        menRelSer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
+        menRelSer.setText("Serviço");
+        menRelSer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                menRelSerActionPerformed(evt);
             }
         });
-        menRelSer.add(jMenuItem4);
+        menRel.add(menRelSer);
 
-        jMenuBar1.add(menRelSer);
+        jMenuBar1.add(menRel);
 
         menAju.setText("Ajuda");
 
@@ -185,13 +185,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void menCadUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menCadUsuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_menCadUsuActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void menRelSerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menRelSerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_menRelSerActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // A linha abaixo substituem a label lblData pela data atual do
@@ -268,15 +268,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    public static javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JLabel lblData;
-    private javax.swing.JLabel lblUsuario;
+    public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenu menAju;
     private javax.swing.JMenuItem menAjuSob;
-    private javax.swing.JMenu menCadUsu;
+    public static javax.swing.JMenu menCad;
+    public static javax.swing.JMenuItem menCadUsu;
     private javax.swing.JMenu menOpcSai;
-    public static javax.swing.JMenu menRelSer;
+    public static javax.swing.JMenu menRel;
+    private javax.swing.JMenuItem menRelSer;
     // End of variables declaration//GEN-END:variables
 }

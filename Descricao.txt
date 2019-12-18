@@ -108,3 +108,15 @@ Iremos agora desabilitar o submenu Usuário e menu Relátorios para usuários co
 apenas administradores poderão ter acesso á essa opção, selecione aonde deseja 
 desabilitar em propriedades>código>Modificadores de Variáveis e selecione public static
 e em Propriedades desetive enable, pronto apenas usuários Admin poderão ter acesso
+
+Agora iremos focar um pouco também em Mysql, usamos o arquivo sql dbinfox2, descreva a
+sua tabela de usuário com o comando describe, observe que temos apenas 5 colunas na 
+tabela, adicionaremos mais uma com o nome de perfil, use o comando select * from tbusuario 
+para ver os campo da tabela, usando mais um comando ainda não usado para adicionar novo campo
+perfil a tabela, observe que antes tinha apenas 5 campo, agora teremos mais um , nesses campos 
+vamos atualizar para que cada iduser receba o perfil de admin ou de user, admin acesso total
+user acesso ilimitado, para poder mostrar qual usuário está acessando ao programa vamos também
+deixar a váriavel lblUsuario como public>static, e a dentro da comparação da função "admin" 
+diremos TelaPrincipal.lblUsuario.getText(rs.String(2)), aonde 2 seria o campos dos usuários
+em else se coloca o mesmo código, caso queira mudar a cor código TelaPrincipal.lblUsuario.set
+Foreground(Color.RED)

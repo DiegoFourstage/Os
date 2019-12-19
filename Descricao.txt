@@ -120,3 +120,23 @@ deixar a váriavel lblUsuario como public>static, e a dentro da comparação da 
 diremos TelaPrincipal.lblUsuario.getText(rs.String(2)), aonde 2 seria o campos dos usuários
 em else se coloca o mesmo código, caso queira mudar a cor código TelaPrincipal.lblUsuario.set
 Foreground(Color.RED)
+
+Agora iremos trabalhar a parte do JDesktoPane, aonde Form JInternalFrame será nosso usuário,
+Form JInternalFrame não foi visto aqui ainda, para adicionar uma nova classe, botão direito
+em br.com.infox.telas->Novo->->Outros>Categorias->Form Gui Swing>Tipo de Arquivos->Form JIn
+ternalFrame, coloque nome de TelaUsuario, classe adicionada agora ir em TelaPrincipal no
+subMenu usuario selecionar e clicar com o botão direito ir em Eventos->Action->ActionPerfor...
+Instanciar a classe, deixar visible, altere o nome da variável JDesktopPane para usuario e
+depois no evento, comando ainda não usado desktop.add(usuario); teste o programa a cada etapa,
+ativando closable, iconifiable e maximizable para poder fechar, minimizar e maximizar a tela
+de usuario, dentro da tela adicione labels e campos de texto pra cada item de acordo com o 
+campo da seu banco de dados, apenas perfil que não usara campo de texto ele usara Caixa de 
+Combinação também conhecida como ComboBox, edite o ComboBox adicionando os perfils criados
+no caso admin e user, depois altere o nome da variáveis de cada item, vamos usar quatros
+icones, create, read, update e delete, baixe pelo site iconfinder e depois adicione 4 botões
+remove se o texto deixe um pouco de de espaço em preferredSize por exemplo se o ícone tem
+64 pixels deixe o botão com 80 pixels. use o mesmo processo para adicionar um novo ícone
+e impotar para o pacote ícones, em propiedades na opção toolTipText você pode adicionar um
+texto ao passar a seta do mouse por cima texto será visualizado um texto, em cursor altere
+para cursor em forma de mão pra quando a seta estiver em cima ele mudar, altere os nomes das 
+variáveis dos ícones 

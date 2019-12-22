@@ -140,3 +140,25 @@ e impotar para o pacote ícones, em propiedades na opção toolTipText você pod
 texto ao passar a seta do mouse por cima texto será visualizado um texto, em cursor altere
 para cursor em forma de mão pra quando a seta estiver em cima ele mudar, altere os nomes das 
 variáveis dos ícones 
+
+Trabalhando a classe TelaUsuario, importe as biblioteca sql e também a classe Modulo
+Conexao que se encontra no pacote br.com.dal.ModuloConexao, iremos usar as mesmas
+variáveis da classe TelaLogin, variáveis usadas Connection conexao, PrepareStatement
+e ResultSet, Connection está ligado a classe ModuloConexao, PrepareStatement está
+ligado ao framework sql e ResulTest nos trás os dados para ser visualizado, dentro
+da classe já existe um construtor que nele existe um método initComponents, método
+responsavel pela parte design da tela, abaixo dele vamos instancia a várivavel conexão
+dizendo que ela é igual á ModuloConexao.conector();, criando um novo método void
+consultar, diremos que nova variável String sql é igual a iduser, depois a dentro
+de um try, pst é igual a váriavel conexao.preparedStatement(sql), selecionando usuário
+do campo 1 e depois consultando com execute query, a dentro de uma função analizando
+com rs.next se os dados de iduser coincidir, dados será inserido dependendo da variável
+escolhida, exemplo txtUsuNome.setText(rs.getString(2)); campo 2 aonde se tem os nomes
+e assim por diante com os outro dados, no combobox ainda não visto muda um pouco em 
+vez de setText(); usa se setSelectedItem(); lembra dos botões adicionado? vamos usar
+o botão consultar usando o evento ActionPerformed, dentro do evento chamar o método
+e executar o programa para fazer os testes, depois de fazer os testes e funcionar
+vamos para mais um detalhe caso cliente não exista vamos usar o else e vamos dar
+uma mensagem "Cliente não cadastrado", ok, agora fazer limpar as caixas de textos
+ao clicar em ok, txtUsuNome.setText(null); assim para os outros já para o combobox
+so muda em vez de setText muda para setSelectedItem(null);

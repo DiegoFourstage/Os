@@ -162,3 +162,43 @@ vamos para mais um detalhe caso cliente não exista vamos usar o else e vamos da
 uma mensagem "Cliente não cadastrado", ok, agora fazer limpar as caixas de textos
 ao clicar em ok, txtUsuNome.setText(null); assim para os outros já para o combobox
 so muda em vez de setText muda para setSelectedItem(null);
+
+Adicionando Usuário novo, mostrando usuário adicionado e mensagem usuário não cadastrado
+
+Na Classe TelaUsuario iremos adicionar um método novo, método adiciona responsavel 
+por adicionar um novo usuário inexistente, método novo adicionado dentro dele 
+adicionar variável String sql e dizer que ele é igual ao código de inserção de dados
+descrito no código sql, não iremos inserir mais pelo workbench e sim inserir pela
+interface gráfica da tela de usuário aonde apenas só usuários administradores 
+teram acesso, apos adicionaremos o try catch pra futuros erros ele nos mostrarar na tela,
+dentro do try diremos que pst(PrepareStatement)  é igual a conexeao.preparedStatement 
+p minuscula (sql), abaixo diferente do método anterior que é consultar, iremos fazer
+adicionar, para isso em vez de get usaramreos o set, faça isso com todos os itens
+iduser, login, fone... apenas o combobox que é diferente ele usa o código getSelect
+Item(); porém ele da um erro, pq teremos que converter para uma String basta apenas
+pós colocar .toString();, agora usaremos o primeiro botão de adicionar icon adicionado
+a TelaUsuario na propriedades dele, Evento>Action>ActionPermormed, chame o método dentro
+dele, faça um teste, se ocorreu bem agora vamos adicionar uma mensagem que usuário foi
+cadastrado para isso criaremos uma nova variável de nome adicionado do tipo inteiro, 
+dizendo que se adicionado for maior que um, exiba a mensagem de Usuário Cadastrado com 
+Sucesso, faça um teste após as mudanças, ao adicionar novo usuário queremos remover
+os textos nos campos de textos para isso basta setar os textos para ficar null, faça
+um teste com um novo usuário sem precisar preencher todos os campos, preencha apenas
+nome e perfil, observe que nem um erro aparece, se você for até o arquivo sql e verificar
+describe tbusuario observe que apenas Yes Null, quer dizer que apenas esse campo
+não precisa ser preenchido, os demais é obrigatório o preenchimento, no banco de dados
+entende que foi preenchido com algo vazio, mais para não acontecer vamos trabalhar
+isso aqui no netBeans, no design adicione uma nova label * Campos Obrigatórios
+em cada item de texto que for obrigatório adicione um *, exemplo * nome, *usuario..
+usaremos uma outra função if else, abaixo da variável adicionado, se txtUsuId estiver
+vazio me mostra a mensagem Campo "Preenchimento Obrigatório" se estiver preenchido
+tire o fecha chave do else e adicione depois do if da função adicionado maior que zero
+pra validar o preenchimento correto, faça um teste executando o programa sem preencher
+o campo iduser observe que ele da um erro de Exception por estudos simulamos esse erro,
+o erro surge por que no sql em iduser usamos auto_increment, criaremos uma outra tabela 
+tbusuario_02, copie da mesma antiga só edite o iduser retirando auto_increment, agora 
+sim podemos fazer a inserção no adicionar usuário sem dar ulgum tipo de erro, faça um
+teste não preenchendo o campo id, depois de fazer os testes, adicione na função todos
+os itens menos o item perfil
+ 
+

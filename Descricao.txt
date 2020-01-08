@@ -200,5 +200,20 @@ tbusuario_02, copie da mesma antiga só edite o iduser retirando auto_increment,
 sim podemos fazer a inserção no adicionar usuário sem dar ulgum tipo de erro, faça um
 teste não preenchendo o campo id, depois de fazer os testes, adicione na função todos
 os itens menos o item perfil
+
+Alterando usuários já existentes
+
+01 - Criando o método para alterar dados do usuário
+02 - Adicionado o Try Catch para verificar futuros erros
+03 - Mensagem de erro, casa haja algum
+05 - Ao digitar nos campos dados ao ser alterados
+06 - Código diferente por ser um combo Box, observe conversão com toString()
+07 - Verificando os campos, casos estejam limpos ele retornaram aqui, por que existe 
+     campos obrigatórios a ser preenchido
+08 - Variável para alterar a estrutura de dados novas, no caso atualizando dados 
+     novos inserido
+09 - Função para caso dados sejam alterados com suceesso e depois limpando os campos
+10 - Agora adicionaremos o evento para o botão alterar Action>ActionFerformed que 
+     foi adicionado na linha 342, a dentro dele chame o método alterar
  
 

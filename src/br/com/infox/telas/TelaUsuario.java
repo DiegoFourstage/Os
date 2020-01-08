@@ -38,7 +38,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
             if (rs.next()) {
                 txtUsuNome.setText(rs.getString(2));
                 txtUsuFone.setText(rs.getString(3));
-                txtUsuLogin.setText(rs.getString(3));
+                txtUsuLogin.setText(rs.getString(4));
                 txtUsuSenha.setText(rs.getString(5));
                 cboUsuPerfil.setSelectedItem(rs.getString(6));
             } else {
@@ -74,15 +74,13 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
 
             // Atualizando PreparedStatement que foi inserido no código anterior
             // pst.executeUpdate(); comando apenas para atualizar sem nenhuma lógica, abaixo usaremos uma lógica, para editar alguns detalhes
-           
-           
             if ((txtUsuId.getText().isEmpty() || txtUsuNome.getText().isEmpty()
                     || txtUsuLogin.getText().isEmpty() || txtUsuSenha.getText().isEmpty())) {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
-                
+
             } else {
-                 // Variável que recebera atualização do pst
-                  int adicionar = pst.executeUpdate();
+                // Variável que recebera atualização do pst
+                int adicionar = pst.executeUpdate();
 
                 // Função
                 if (adicionar > 0) {
@@ -108,6 +106,49 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
             //JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    // 01 - Criando o método para alterar dados do usuário
+    private void alterar() {
+        String sql = "update tbusuario_02 set usuario=?, fone=?, login=?, senha=?, perfil=? where iduser=?";
+        // 02 - Adicionado o Try Catch para verificar futuros erros
+        try {
+            // 04 - pst passa ser a nossa conexão recebendo prepareStatent
+            pst = conexao.prepareStatement(sql);
+
+            // 05 - Ao digitar nos campos dados ao ser alterados
+            pst.setString(1, txtUsuNome.getText());
+            pst.setString(2, txtUsuFone.getText());
+            pst.setString(3, txtUsuLogin.getText());
+            pst.setString(4, txtUsuSenha.getText());
+            pst.setString(5, cboUsuPerfil.getSelectedItem().toString()); // 06 - Código diferente por ser um combo Box, observe conversão com toString()
+            pst.setString(6, txtUsuId.getText());
+
+            // 07 - Verificando os campos, casos estejam limpos ele retornaram aqui, por que existe campos obrigatórios a ser preenchido             
+            if (txtUsuId.getText().isEmpty() || txtUsuNome.getText().isEmpty() || txtUsuFone.getText().isEmpty() || txtUsuLogin.getText().isEmpty()
+                    || txtUsuSenha.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
+            } else {
+                // 08 - Variável para alterar a estrutura de dados novas, no caso atualizando dados novos inserido
+                int alterar = pst.executeUpdate();
+
+                // 09 - Função para caso dados sejam alterados com suceesso e depois limpando os campos
+                if (alterar >= 0) {
+                    JOptionPane.showMessageDialog(null, "Dados do usuário alterado com sucesso");
+                    txtUsuId.setText(null);
+                    txtUsuNome.setText(null);
+                    txtUsuFone.setText(null);
+                    txtUsuLogin.setText(null);
+                    txtUsuSenha.setText(null);
+                }
+
+                // 10 - Agora adicionaremos o evento para o botão alterar Action>ActionFerformed que foi adicionado na linha 342,
+                // a dentro dele chame o método alterar
+            }
+        } catch (Exception e) {
+            // 03 - Mensagem de erro, casa haja algum
+            JOptionPane.showMessageDialog(null, "Bug: " + e);
         }
     }
 
@@ -183,6 +224,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnUsuUpdate.setToolTipText("Atualizar");
         btnUsuUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuUpdate.setPreferredSize(new java.awt.Dimension(80, 80));
+        btnUsuUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuUpdateActionPerformed(evt);
+            }
+        });
 
         btnUsuDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/delete.png"))); // NOI18N
         btnUsuDelete.setToolTipText("Deletar");
@@ -223,9 +269,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                                     .addComponent(txtUsuId, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel8)
                                     .addComponent(txtUsuFone)
                                     .addComponent(txtUsuSenha))))
                         .addContainerGap())
@@ -295,6 +339,10 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         // Chamando o método adicionar 
         adicionar();
     }//GEN-LAST:event_btnUsuCreateActionPerformed
+
+    private void btnUsuUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuUpdateActionPerformed
+        alterar();
+    }//GEN-LAST:event_btnUsuUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

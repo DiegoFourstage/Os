@@ -152,6 +152,47 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         }
     }
 
+    // Removendo um unsuário já existente
+    // 01 - Método para remover
+    private void remover() {
+        // 02 - Variável que recebe a mensagem se deseja confirmar ou não a remoção
+        int confirmar = JOptionPane.showConfirmDialog(null, "Deseja remover este usuãrio? ", "Atenção", JOptionPane.YES_NO_OPTION);
+
+        // 03 - Função caso a resposta seja sim
+        if (confirmar == JOptionPane.YES_NO_OPTION) {
+            // 04 - Caminho para remoção aonde á variável receba seus dados sql
+            String sql = "delete from tbusuario_02 where iduser=?";
+
+            // 05 - Um try e catch para te mostrar talvez alguns futuros bugs
+            try {
+                // 06 - Preparando a conexao 
+                pst = conexao.prepareStatement(sql);
+                // 07 - selecionando o campo id
+                pst.setString(1, txtUsuId.getText());
+
+                // 08 - Passando á uma variável a atualização da remoção
+                int atualizar = pst.executeUpdate();
+              
+                // 09 - Função atualizar se ele for maior que zero, execute a exclusão
+                if (atualizar >= 0) {
+                    JOptionPane.showMessageDialog(null, "Cliente exluído com sucesso");
+                    // 10 - Após exclusão vai cair aqui para limpar os campos
+                    txtUsuId.setText(null);
+                    txtUsuNome.setText(null);
+                    txtUsuFone.setText(null);
+                    txtUsuLogin.setText(null);
+                    txtUsuSenha.setText(null);
+
+                }
+                // 11 - Agora usaremos o botão alterar em projeto, botão direito ir em  Evento>Action>ActionPerformed
+                // adicionado evento, chame o método remover
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -234,6 +275,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnUsuDelete.setToolTipText("Deletar");
         btnUsuDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuDelete.setPreferredSize(new java.awt.Dimension(80, 80));
+        btnUsuDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuDeleteActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("* Campos Obrigatórios");
 
@@ -343,6 +389,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
     private void btnUsuUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuUpdateActionPerformed
         alterar();
     }//GEN-LAST:event_btnUsuUpdateActionPerformed
+
+    private void btnUsuDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuDeleteActionPerformed
+        // Chamando o método remover
+        remover();
+    }//GEN-LAST:event_btnUsuDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

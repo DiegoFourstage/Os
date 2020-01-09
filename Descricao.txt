@@ -215,5 +215,23 @@ Alterando usuários já existentes
 09 - Função para caso dados sejam alterados com suceesso e depois limpando os campos
 10 - Agora adicionaremos o evento para o botão alterar Action>ActionFerformed que 
      foi adicionado na linha 342, a dentro dele chame o método alterar
+
+Removendo um usuário já existente
+
+Removendo um unsuário já existente
+
+01 - Método para remover
+02 - Variável que recebe a mensagem se deseja confirmar ou não a remoção
+03 - Função caso a resposta seja sim
+04 - Caminho para remoção aonde á variável receba seus dados sql
+05 - Um try e catch para te mostrar talvez alguns futuros bugs
+06 - Preparando a conexao 
+07 - selecionando o campo id
+08 - Passando á uma variável a atualização da remoção
+09 - Função atualizar se ele for maior que zero, execute a exclusão
+10 - Após exclusão vai cair aqui para limpar os campos
+11 - Agora usaremos o botão alterar em projeto, botão direito ir em  
+     Evento>Action>ActionPerformed adicionado evento, chame o método remover
+
  
 

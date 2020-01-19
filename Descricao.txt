@@ -233,5 +233,28 @@ Removendo um unsuário já existente
 11 - Agora usaremos o botão alterar em projeto, botão direito ir em  
      Evento>Action>ActionPerformed adicionado evento, chame o método remover
 
+No arquivo sql criamos uma nova tabela, com o nome de tbclientes aonde o idcli
+sera auto_increment, para automatizar a sequência de números de clietes adicionado
+
+Iremos agora adicionar um novo arquivo Form JInternalFrame com o nome TelaCliente,
+dentro do projeto adicione os itens * Campos obrigatórios, nome, Endereço, Fone
+e Email, e em cada item escolha a quem deverar ser obrigatário o preenchimento
+ele não pode ser nulo, adicione três botões e em propriedades em ícones adicione
+uma imagem para cada botão
+
+Agora iremos adicionar uma nova label, nessa label adicionaremos um ícone com o 
+desenho de uma lupa e remova o texto, antes da label adicione um campo de texto.
+
+Ainda não visto adicione uma nova tabela abaixo do campo de texto redimensione
+ao tamanho desejável.
+
+Depois da parte designer estiver completa com todos itens ao seus postos, agora
+alteraremos o nome de todas as variáveis 
+
+
+
+
+
+
  
 

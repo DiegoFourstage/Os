@@ -43,3 +43,19 @@ values("Cibele Santana", "8943-9003", "cibele", "cibele");
 update tbusuario set perfil='admin' where iduser=1;
 update tbusuario set perfil='admin' where iduser=2;
 update tbusuario set perfil='user' where iduser=3;
+
+-- Foi criado uma nova tabela com o nome tbusuario_02 igual tbusuario, apenas
+-- foi retirado o tipo de auto_increment
+
+-- Agora iremos criar uma nova tabela com o nome de tbclientes está tabela o
+-- idcli vai ser auto_increment devido a demanda de usuários que possa existir
+create table tbclientes(
+idclie int primary key auto_increment,
+nomecli varchar(50) not null
+endcli varchar(100)
+fonecli varchar(15) not null
+emailcli varchar(50) unique
+);
+
+-- Descrevendo a nova tabela
+describe tbclientes;

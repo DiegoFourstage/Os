@@ -175,7 +175,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
               
                 // 09 - Função atualizar se ele for maior que zero, execute a exclusão
                 if (atualizar >= 0) {
-                    JOptionPane.showMessageDialog(null, "Cliente exluído com sucesso");
+                    JOptionPane.showMessageDialog(null, "Usuário exluído com sucesso");
                     // 10 - Após exclusão vai cair aqui para limpar os campos
                     txtUsuId.setText(null);
                     txtUsuNome.setText(null);

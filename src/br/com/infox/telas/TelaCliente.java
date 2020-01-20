@@ -5,17 +5,72 @@
  */
 package br.com.infox.telas;
 
+// 01 - Importando as bibliotecas necessárias
+import java.sql.*;
+import br.com.infox.dal.ModuloConexao;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author D1350
  */
 public class TelaCliente extends javax.swing.JInternalFrame {
 
+    // 02 - Variáveis para as conexões e resultados
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+
     /**
      * Creates new form TelaCliente
      */
     public TelaCliente() {
         initComponents();
+        // 03 - Executando o módulo de conexao
+        conexao = ModuloConexao.conector();
+    }
+
+    private void adicionar() {
+        // 04 - Caminho dos dados do banco mysql
+        String sql = "insert into tbclientes (nomecli, endcli, fonecli, emailcli) values (?, ?, ?, ?)";
+
+        // 05 - Adicionando o try e catch
+        try {
+            // 06 - pst é igual á conexão 
+            pst = conexao.prepareStatement(sql);
+
+            // 07 - Comando para pegar dados digitado no teclado
+            pst.setString(1, txtCliNome.getText());
+            pst.setString(2, txtCliEndereco.getText());
+            pst.setString(3, txtCliFone.getText());
+            pst.setString(4, txtCliEmail.getText());
+
+            // 08 - Campos obrigatórios a ser preenchido
+            if (txtCliNome.getText().isEmpty() || txtCliFone.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Preencha os campos obrigatórios");
+            } else {
+                // 09 - Variável adicionar, ela atualiza ao ser maior do que zero
+                int adicionar = pst.executeUpdate();
+
+                // 10 - int adicionar ao ser maior que 0, cliente sera adicionado com sucesso
+                if (adicionar > 0) {
+                    JOptionPane.showMessageDialog(null, "Cliente adicionado com sucesso");
+                    // 11 - Limpando os campos após ser adicionado o novo cliente
+
+                    txtCliNome.setText(null);
+                    txtCliEndereco.setText(null);
+                    txtCliFone.setText(null);
+                    txtCliEmail.setText(null);
+
+                    // 12 - Agora crie o evento do botão e chame a dentro dele esse método
+                    // 13 - Acionando, minimizar, maximizar e fechar a tela cliente, em propriedade
+                    // ative closeble, maximizable e iconifiable, também colocando titulo a janela 
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**
@@ -44,6 +99,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Clientes");
+
         jLabel1.setText("* Campos obrigatórios");
 
         jLabel2.setText("* Nome");
@@ -55,6 +115,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jLabel5.setText("email");
 
         btnAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/add.png"))); // NOI18N
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
 
         btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/edit.png"))); // NOI18N
 
@@ -165,6 +230,10 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private void txtCliEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCliEnderecoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCliEnderecoActionPerformed
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        adicionar();
+    }//GEN-LAST:event_btnAdicionarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -252,6 +252,23 @@ Depois da parte designer estiver completa com todos itens ao seus postos, agora
 alteraremos o nome de todas as variáveis 
 
 
+Adicionado um novo cliente, com função de campo obrigatório de preenchimento,
+limpando os campos ao ter sucecesso ao adicionar um novo cliente
+
+01 - Importando as bibliotecas necessárias
+02 - Variáveis para as conexões e resultados
+03 - Executando o módulo de conexao
+04 - Caminho dos dados do banco mysql
+05 - Adicionando o try e catch
+07 - Comando para pegar dados digitado no teclado
+08 - Campos obrigatórios a ser preenchido
+09 - Variável adicionar, ela atualiza ao ser maior do que zero
+10 - int adicionar ao ser maior que 0, cliente sera adicionado com sucesso
+11 - Limpando os campos após ser adicionado o novo cliente
+12 - Agora crie o evento do botão e chame a dentro dele esse método
+13 - Acionando, minimizar, maximizar e fechar a tela cliente, em propriedade
+     ative closeble, maximizable e iconifiable, também colocando titulo a janela 
+
 
 
 

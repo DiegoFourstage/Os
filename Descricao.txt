@@ -270,6 +270,25 @@ limpando os campos ao ter sucecesso ao adicionar um novo cliente
      ative closeble, maximizable e iconifiable, também colocando titulo a janela 
 
 
+Iremos agora utilizar da pesquisa por filtro de caractere e em seguida mostrar
+a visualização na tabela, usaremos a biblioteca rs2xml.rar opensource que importaremos 
+para biblioteca do projeto, link para download: 
+https://sourceforge.net/projects/finalangelsanddemons/postdownload
+
+b1 - Importando recursos da biblioteca rs2xml.jar
+b2 - Método para pesquisar clientes pelo nome com filtro
+b3 - Caminho para filtragem mysql
+b4 - Caso ocorra uma exceção try e catch
+b5 - Passando a conteúdo da caixa de pesquisa para o ?
+     atenão ao "%" que é a continuação da String sql
+b6 - Execuntando a Query
+b7 - A linha abaixo usa a bibliteca rs2xml.jar para preencher a tabela
+b8 - Adicionando novo evento em campo de pesquisa selecionando, botão direito ir 
+     em evento>Key>KeyReleased este evento é do tipo "Enquando for digitando"
+b9 - Evento "enquando for digitando"
+
+
+
 
 
 

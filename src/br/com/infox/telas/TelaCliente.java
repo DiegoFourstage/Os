@@ -10,6 +10,9 @@ import java.sql.*;
 import br.com.infox.dal.ModuloConexao;
 import javax.swing.JOptionPane;
 
+// b1 - Importando recursos da biblioteca rs2xml.jar
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author D1350
@@ -67,6 +70,31 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                     // ative closeble, maximizable e iconifiable, também colocando titulo a janela 
                 }
             }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    // b2 - Método para pesquisar clientes pelo nome com filtro
+    private void pesquisar_cliente() {
+        // b3 - Caminho para filtragem mysql
+        String sql = "select * from tbclientes where nomecli like ?";
+        // b4 - Caso ocorra uma exceção try e catch
+        try {
+            pst = conexao.prepareStatement(sql);
+            // b5 - Passando a conteúdo da caixa de pesquisa para o ?
+            // atenão ao "%" que é a continuação da String sql
+            pst.setString(1, txtCliPesquisar.getText() + "%");
+            
+            // b6 - Execuntando a Query
+            rs= pst.executeQuery();
+            // b7 - A linha abaixo usa a bibliteca rs2xml.jar para preencher a tabela
+            // tblClientes seria nossa table a ser preenchida
+            tblClientes.setModel(DbUtils.resultSetToTableModel(rs));
+            
+            // b8 - Adicionando novo evento em campo de pesquisa selecionando, botão direito ir em evento>Key>KeyReleased 
+            // Este evento é do tipo "Enquando for digitando"
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -132,6 +160,12 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/lupa2.png"))); // NOI18N
+
+        txtCliPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCliPesquisarKeyReleased(evt);
+            }
+        });
 
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -234,6 +268,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         adicionar();
     }//GEN-LAST:event_btnAdicionarActionPerformed
+    // b9 - Evento "enquando for digitando"
+    private void txtCliPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCliPesquisarKeyReleased
+        //  Chamando o método pesquisar clientes
+        pesquisar_cliente();
+    }//GEN-LAST:event_txtCliPesquisarKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -59,3 +59,7 @@ emailcli varchar(50) unique
 
 -- Descrevendo a nova tabela
 describe tbclientes;
+
+-- Código para filtrar por ínicio de cada letra
+select * from tbclientes where nomecli like 'j%'; -- Todos os nomes com a letra
+-- 'j' será mostrado a tela

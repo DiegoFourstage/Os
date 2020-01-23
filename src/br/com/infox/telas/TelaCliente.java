@@ -100,6 +100,20 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    // c1 - Método para setar ao clicar no cliente desejado
+    private void setar_campos(){
+        // c2 - Criando nova variável inteira e passando ase tblClientes e selecionando
+        int setar = tblClientes.getSelectedRow();
+        // c3 - Passandos as variáveis ao clicar e selecionar á variável ira preencher os campos 
+        txtCliNome.setText(tblClientes.getModel().getValueAt(setar, 0).toString());
+        txtCliEndereco.setText(tblClientes.getModel().getValueAt(setar, 1).toString());
+        txtCliFone.setText(tblClientes.getModel().getValueAt(setar, 2).toString());
+        txtCliEmail.setText(tblClientes.getModel().getValueAt(setar, 3).toString());
+        
+        // c4 - Adicionando novo evento da Tabela ao clicar com ou mouse em tempo real
+        // Campos será preenchido, caminho para o evento Eventos>Mouse> mouseClicked
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -178,6 +192,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblClientes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -273,6 +292,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         //  Chamando o método pesquisar clientes
         pesquisar_cliente();
     }//GEN-LAST:event_txtCliPesquisarKeyReleased
+    // c5 - Eventos usado para setar os campos da tabela ao clicar com o mouse
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        // - c6 - Chamando o método para setar os campos
+        setar_campos();
+    }//GEN-LAST:event_tblClientesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

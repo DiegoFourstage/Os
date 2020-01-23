@@ -287,6 +287,21 @@ b8 - Adicionando novo evento em campo de pesquisa selecionando, botão direito i
      em evento>Key>KeyReleased este evento é do tipo "Enquando for digitando"
 b9 - Evento "enquando for digitando"
 
+Agora iremos setar nossa tabela para que ao clicar em um cliente desejado ele 
+mostrar abaixo nos campos vazios, detalhe que ao for editar o cliente facilita
+ao mostrar todos os dados dele
+
+c1 - Método para setar ao clicar no cliente desejado
+c2 - Criando nova variável inteira e passando ase tblClientes e selecionando
+c3 - Passandos as variáveis ao clicar e selecionar á variável ira preencher os campos
+c4 - Adicionando novo evento da Tabela ao clicar com ou mouse em tempo real
+     campos será preenchido, caminho para o evento Eventos>Mouse> mouseClicked
+c5 - Eventos usado para setar os campos da tabela ao clicar com o mouse
+c6 - Chamando o método para setar os campos
+
+
+
+
 
 
 
